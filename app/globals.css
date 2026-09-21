@@ -1,5 +1,3 @@
-@import 'tailwindcss';
-
 :root { --ink:#322304; --ink-soft:#6c5a2a; --gold:#ffca38; --gold-light:#fff1a5; --cream:#fffdf0; --canvas:#fff7c7; --white:#fff; --line:rgba(50,35,4,.14); --green:#17845d; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -48,6 +46,7 @@ h2 { margin:0; font-size:clamp(2rem,3.7vw,3.35rem); line-height:1.05; letter-spa
 .feature-card:nth-child(2),.feature-card:nth-child(4) { transform:translateY(18px); }
 .icon-badge { display:inline-grid; width:48px; height:48px; place-items:center; border-radius:14px; color:white; background:var(--ink); }
 .icon-badge svg { width:24px; height:24px; }
+.icon-badge .icon-mark { color:white; font-size:1.25rem; font-weight:850; line-height:1; }
 .icon-badge.large { width:62px; height:62px; border-radius:18px; flex:0 0 auto; }
 .feature-card h3,.privacy-grid h3 { margin:38px 0 8px; font-size:1.08rem; line-height:1.25; }
 .feature-card p,.privacy-grid p { margin:0; color:var(--ink-soft); font-size:.94rem; }

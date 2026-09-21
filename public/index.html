@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Help, troubleshooting, and privacy information for ArchiveMark — Your Personal Media Archive.">
+  <title>ArchiveMark Support</title>
+  <link rel="icon" href="./favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="ArchiveMark support home"><img src="./brand-icon.png" alt=""><span>ArchiveMark</span></a>
+    <nav aria-label="Support navigation">
+      <a href="#help">Help</a><a href="#privacy">Privacy</a>
+      <a class="nav-cta" href="https://github.com/sur5an/ArchiveMark-Support/issues/new?template=support-request.md">Get support ↗</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">✓ Official support</p>
+      <h1>Your memories deserve a backup you can understand.</h1>
+      <p class="lede">ArchiveMark helps you copy original photos, videos, and chosen files to storage you control—then clearly shows what is protected and what still needs attention.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="https://github.com/sur5an/ArchiveMark-Support/issues/new?template=support-request.md">? &nbsp; Open a support request</a>
+        <a class="button secondary" href="#quick-start">View quick start</a>
+      </div>
+      <p class="response-note">For the fastest help, include your device model, OS version, and ArchiveMark version. Never attach personal media.</p>
+    </div>
+    <div class="archive-card" aria-label="How ArchiveMark protects a backup">
+      <div class="archive-card-header"><span class="status-dot"></span><span>YOUR PERSONAL MEDIA ARCHIVE</span></div>
+      <div class="archive-path">
+        <div><span class="icon-badge"><span class="icon-mark">+</span></span><span>Choose</span><small>Your library</small></div>
+        <span class="path-line"></span>
+        <div><span class="icon-badge"><span class="icon-mark">↻</span></span><span>Compare</span><small>What changed</small></div>
+        <span class="path-line"></span>
+        <div><span class="icon-badge"><span class="icon-mark">✓</span></span><span>Verify</span><small>Every copy</small></div>
+      </div>
+      <div class="archive-result"><span class="icon-mark">▣</span><div><strong>Storage you control</strong><span>Organized, checked, and ready</span></div></div>
+    </div>
+  </section>
+
+  <section class="section experience" aria-labelledby="experience-title">
+    <div class="section-heading"><p class="eyebrow">What to expect</p><h2 id="experience-title">A calm, clear backup experience</h2></div>
+    <div class="feature-grid">
+      <article class="feature-card"><span class="icon-badge"><span class="icon-mark">+</span></span><h3>Choose what to protect</h3><p>Connect your photo library and add any Files folders you want included.</p></article>
+      <article class="feature-card"><span class="icon-badge"><span class="icon-mark">↻</span></span><h3>Back up only what is needed</h3><p>ArchiveMark compares your library with your archive before enabling backup.</p></article>
+      <article class="feature-card"><span class="icon-badge"><span class="icon-mark">✓</span></span><h3>Know every copy is safe</h3><p>Each copied file is verified. Integrity Check can find and repair damaged copies.</p></article>
+      <article class="feature-card"><span class="icon-badge"><span class="icon-mark">◷</span></span><h3>Stay up to date</h3><p>Review recent backups and receive reminders when new media is waiting.</p></article>
+    </div>
+  </section>
+
+  <section class="section quick-start" id="quick-start" aria-labelledby="quick-start-title">
+    <div class="section-heading"><p class="eyebrow">Quick start</p><h2 id="quick-start-title">Your first backup</h2><p>ArchiveMark performs a one-way backup. It never deletes originals from your phone or tablet.</p></div>
+    <ol class="steps">
+      <li><span>1</span><div><strong>Connect your library</strong><p>Allow access to the photos and videos you want ArchiveMark to see.</p></div></li>
+      <li><span>2</span><div><strong>Choose a destination</strong><p>Select an external drive or a folder in device storage.</p></div></li>
+      <li><span>3</span><div><strong>Review and back up</strong><p>ArchiveMark shows the items waiting, copies them, and verifies every completed file.</p></div></li>
+      <li><span>4</span><div><strong>Reconnect when needed</strong><p>Refresh the library later to find new items. Verified files are not copied again.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="section help" id="help" aria-labelledby="help-title">
+    <div class="section-heading"><p class="eyebrow">Common questions</p><h2 id="help-title">Troubleshooting</h2></div>
+    <div class="faq-list">
+      <details><summary>Why is the backup button disabled?<span aria-hidden="true">+</span></summary><p>Reconnect the saved drive or folder, then refresh the library. ArchiveMark keeps backup disabled while the destination is unavailable.</p></details>
+      <details><summary>What if manifest.csv is deleted?<span aria-hidden="true">+</span></summary><p>ArchiveMark can rebuild verified records from its local catalogue when the destination files still match. Your media files remain the source of truth.</p></details>
+      <details><summary>Why can a Live Photo count as two files?<span aria-hidden="true">+</span></summary><p>On iPhone, a Live Photo contains an image and a short video. ArchiveMark counts one library item but verifies both original files.</p></details>
+      <details><summary>What does Integrity Check do?<span aria-hidden="true">+</span></summary><p>It reads backed-up files, confirms their contents, and recreates missing or damaged copies when the original is available.</p></details>
+      <details><summary>Can a backup continue while the device is locked?<span aria-hidden="true">+</span></summary><p>ArchiveMark uses the background time available on your device. For very large backups, keep the app open and the device powered; reopening safely reconciles completed files.</p></details>
+    </div>
+  </section>
+
+  <section class="section privacy" id="privacy" aria-labelledby="privacy-title">
+    <div class="privacy-intro"><span class="icon-badge large"><span class="icon-mark">◇</span></span><div><p class="eyebrow">Privacy</p><h2 id="privacy-title">Your archive stays yours.</h2><p>ArchiveMark does not require an account and does not upload your media to an ArchiveMark cloud service.</p></div></div>
+    <div class="privacy-grid">
+      <article><h3>Photo library</h3><p>Access is used to show backup status and read originals selected for backup.</p></article>
+      <article><h3>Files and folders</h3><p>ArchiveMark accesses only the source folders and destination you choose.</p></article>
+      <article><h3>Backup records</h3><p>Verification records are kept on your device and inside the selected archive destination.</p></article>
+      <article><h3>Notifications</h3><p>Optional reminders tell you when new media may be waiting for backup.</p></article>
+    </div>
+    <p class="updated">Privacy information last updated September 20, 2026.</p>
+  </section>
+
+  <section class="support-banner" aria-labelledby="support-title">
+    <div><p class="eyebrow">Still need help?</p><h2 id="support-title">Tell us what happened.</h2><p>Open a support request and include the steps you took and any message shown by ArchiveMark.</p></div>
+    <a class="button primary" href="https://github.com/sur5an/ArchiveMark-Support/issues/new?template=support-request.md">? &nbsp; Contact support</a>
+  </section>
+
+  <footer><div class="brand"><img src="./brand-icon.png" alt=""><span>ArchiveMark</span></div><p>Your Personal Media Archive</p><a href="https://github.com/sur5an/ArchiveMark-Support">GitHub ↗</a></footer>
+</main>
+</body>
+</html>
