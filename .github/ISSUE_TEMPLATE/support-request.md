@@ -1,6 +1,6 @@
 ---
 name: Support request
-about: Get help with ArchiveMark
+about: Get help with ArchiveVault
 title: "Support: "
 labels: support
 assignees: ''
@@ -8,14 +8,14 @@ assignees: ''
 
 ## What happened?
 
-Tell us what you were trying to do and what ArchiveMark displayed.
+Tell us what you were trying to do and what ArchiveVault displayed.
 
 ## Device information
 
 - Device model:
 - iOS or Android version:
-- ArchiveMark version:
-- Backup destination type (external drive, device folder, or other):
+- ArchiveVault version:
+- Backup destination type (device folder, external drive, Files provider, or SMB):
 
 ## Steps to reproduce
 

@@ -1,3 +1,4 @@
+/* oxlint-disable next/no-img-element -- Relative image URLs keep the exported GitHub Pages site portable. */
 import {
   Archive,
   BellRing,
@@ -17,26 +18,27 @@ const supportRequest = `${repository}/issues/new?template=support-request.md`;
 
 const experiences = [
   { icon: FolderOpen, title: 'Choose what to protect', text: 'Connect your photo library and add any Files folders you want included.' },
-  { icon: RefreshCw, title: 'Back up only what is needed', text: 'ArchiveMark compares your library with your archive before enabling backup.' },
+  { icon: RefreshCw, title: 'Back up only what is needed', text: 'ArchiveVault compares your library with your archive before enabling backup.' },
   { icon: FileCheck2, title: 'Know every copy is safe', text: 'Each copied file is verified. Integrity Check can find and repair damaged copies.' },
   { icon: BellRing, title: 'Stay up to date', text: 'Review recent backups and receive reminders when new media is waiting.' },
 ];
 
 const troubleshooting = [
-  { question: 'Why is the backup button disabled?', answer: 'Reconnect the saved drive or folder, then refresh the library. ArchiveMark keeps backup disabled while the destination is unavailable.' },
-  { question: 'What if manifest.csv is deleted?', answer: 'ArchiveMark can rebuild verified records from its local catalogue when the destination files still match. Your media files remain the source of truth.' },
-  { question: 'Why can a Live Photo count as two files?', answer: 'On iPhone, a Live Photo contains an image and a short video. ArchiveMark counts one library item but verifies both original files.' },
+  { question: 'Why is the backup button disabled?', answer: 'Reconnect the saved drive, folder, or SMB share, then refresh the library. ArchiveVault keeps backup disabled while the destination is unavailable.' },
+  { question: 'What if manifest.csv is deleted?', answer: 'ArchiveVault can rebuild verified records from its local catalogue when the destination files still match. Your media files remain the source of truth.' },
+  { question: 'Why can a Live Photo count as two files?', answer: 'On iPhone, a Live Photo contains an image and a short video. ArchiveVault counts one library item but verifies both original files.' },
   { question: 'What does Integrity Check do?', answer: 'It reads backed-up files, confirms their contents, and recreates missing or damaged copies when the original is available.' },
-  { question: 'Can a backup continue while the device is locked?', answer: 'ArchiveMark uses the background time available on your device. For very large backups, keep the app open and the device powered; reopening safely reconciles completed files.' },
+  { question: 'Can I use network storage?', answer: 'Yes. ArchiveVault can connect directly to a compatible SMB2 or SMB3 share. The app tests write access before enabling backup, and stores the SMB password in the Apple Keychain.' },
+  { question: 'Can a backup continue while the device is locked?', answer: 'ArchiveVault uses system-managed background processing when available and saves progress after every verified file. Keep the device powered for large backups; reopening safely reconciles completed files.' },
 ];
 
 export default function Home() {
   return (
     <main>
       <header className="topbar">
-        <a className="brand" href="#top" aria-label="ArchiveMark support home">
+        <a className="brand" href="#top" aria-label="ArchiveVault support home">
           <img src="./brand-icon.png" alt="" />
-          <span>ArchiveMark</span>
+          <span>ArchiveVault</span>
         </a>
         <nav aria-label="Support navigation">
           <a href="#help">Help</a>
@@ -49,15 +51,15 @@ export default function Home() {
         <div className="hero-copy">
           <p className="eyebrow"><ShieldCheck size={17} /> Official support</p>
           <h1>Your memories deserve a backup you can understand.</h1>
-          <p className="lede">ArchiveMark helps you copy original photos, videos, and chosen files to storage you control—then clearly shows what is protected and what still needs attention.</p>
+          <p className="lede">ArchiveVault helps you copy original photos, videos, and chosen files to local, external, or SMB storage you control—then clearly shows what is protected and what still needs attention.</p>
           <div className="hero-actions">
             <a className="button primary" href={supportRequest}><CircleHelp size={19} /> Open a support request</a>
             <a className="button secondary" href="#quick-start">View quick start</a>
           </div>
-          <p className="response-note">For the fastest help, include your device model, OS version, and ArchiveMark version. Never attach personal media.</p>
+          <p className="response-note">For the fastest help, include your device model, OS version, and ArchiveVault version. Never attach personal media.</p>
         </div>
 
-        <div className="archive-card" aria-label="How ArchiveMark protects a backup">
+        <div className="archive-card" aria-label="How ArchiveVault protects a backup">
           <div className="archive-card-header"><span className="status-dot" /><span>YOUR PERSONAL MEDIA ARCHIVE</span></div>
           <div className="archive-path">
             <div><FolderOpen aria-hidden="true" /><span>Choose</span><small>Your library</small></div>
@@ -80,11 +82,11 @@ export default function Home() {
       </section>
 
       <section className="section quick-start" id="quick-start" aria-labelledby="quick-start-title">
-        <div className="section-heading"><p className="eyebrow">Quick start</p><h2 id="quick-start-title">Your first backup</h2><p>ArchiveMark performs a one-way backup. It never deletes originals from your phone or tablet.</p></div>
+        <div className="section-heading"><p className="eyebrow">Quick start</p><h2 id="quick-start-title">Your first backup</h2><p>ArchiveVault performs a one-way backup. It never deletes originals from your phone or tablet.</p></div>
         <ol className="steps">
-          <li><span>1</span><div><strong>Connect your library</strong><p>Allow access to the photos and videos you want ArchiveMark to see.</p></div></li>
-          <li><span>2</span><div><strong>Choose a destination</strong><p>Select an external drive or a folder in device storage.</p></div></li>
-          <li><span>3</span><div><strong>Review and back up</strong><p>ArchiveMark shows the items waiting, copies them, and verifies every completed file.</p></div></li>
+          <li><span>1</span><div><strong>Connect your library</strong><p>Allow access to the photos and videos you want ArchiveVault to see.</p></div></li>
+          <li><span>2</span><div><strong>Choose a destination</strong><p>Select a local folder, external drive, Files provider, or SMB network share.</p></div></li>
+          <li><span>3</span><div><strong>Review and back up</strong><p>ArchiveVault shows the items waiting, copies them, and verifies every completed file.</p></div></li>
           <li><span>4</span><div><strong>Reconnect when needed</strong><p>Refresh the library later to find new items. Verified files are not copied again.</p></div></li>
         </ol>
       </section>
@@ -101,24 +103,31 @@ export default function Home() {
       <section className="section privacy" id="privacy" aria-labelledby="privacy-title">
         <div className="privacy-intro">
           <span className="icon-badge large"><LockKeyhole aria-hidden="true" /></span>
-          <div><p className="eyebrow">Privacy</p><h2 id="privacy-title">Your archive stays yours.</h2><p>ArchiveMark does not require an account and does not upload your media to an ArchiveMark cloud service.</p></div>
+          <div><p className="eyebrow">Privacy policy</p><h2 id="privacy-title">Your archive stays yours.</h2><p>ArchiveVault does not require an account and does not send your media, files, credentials, or usage activity to the developer.</p></div>
         </div>
         <div className="privacy-grid">
           <article><h3>Photo library</h3><p>Access is used to show backup status and read originals selected for backup.</p></article>
-          <article><h3>Files and folders</h3><p>ArchiveMark accesses only the source folders and destination you choose.</p></article>
-          <article><h3>Backup records</h3><p>Verification records are kept on your device and inside the selected archive destination.</p></article>
-          <article><h3>Notifications</h3><p>Optional reminders tell you when new media may be waiting for backup.</p></article>
+          <article><h3>Files and destinations</h3><p>ArchiveVault accesses only folders you select. Copies and metadata are written directly to storage you choose.</p></article>
+          <article><h3>SMB network shares</h3><p>Server settings remain on the device and passwords are stored in the Apple Keychain. Your chosen server or provider may have its own privacy practices.</p></article>
+          <article><h3>Backup records</h3><p>Filenames, dates, file sizes, SHA-256 hashes, paths, timestamps, and a random installation identifier are kept on the device and inside the selected archive.</p></article>
+          <article><h3>No collection or tracking</h3><p>The developer does not collect, sell, rent, or share user data. There are no advertising, analytics, or cross-app tracking services.</p></article>
+          <article><h3>Notifications</h3><p>Optional reminders are scheduled on the device and can be disabled in ArchiveVault or iOS Settings.</p></article>
+          <article><h3>Retention and deletion</h3><p>App records remain until the app or applicable source is removed. Destination files remain until you delete them from the chosen storage. ArchiveVault never deletes source originals.</p></article>
+          <article><h3>Your choices</h3><p>Revoke Photos, local-network, or notification access in iOS Settings; remove selected Files sources in the app; and replace an SMB destination at any time.</p></article>
+          <article><h3>Security</h3><p>Copied files are verified with SHA-256. SMB encryption can be requested for compatible servers. No storage or transmission method can be guaranteed completely secure.</p></article>
+          <article><h3>Third-party software</h3><p>SMB support uses <a href="https://github.com/amosavian/AMSMB2">AMSMB2</a> under the MIT License and <a href="https://github.com/sahlberg/libsmb2">libsmb2</a> under the LGPL-2.1-or-later license.</p></article>
+          <article><h3>Children and changes</h3><p>ArchiveVault is a general-purpose utility and does not knowingly collect information from children or other users. Material policy changes will be reflected here.</p></article>
         </div>
-        <p className="updated">Privacy information last updated September 20, 2026.</p>
+        <p className="updated">Effective and last updated September 28, 2026. Privacy questions can be submitted through the support-request link on this page.</p>
       </section>
 
       <section className="support-banner" aria-labelledby="support-title">
-        <div><p className="eyebrow">Still need help?</p><h2 id="support-title">Tell us what happened.</h2><p>Open a support request and include the steps you took and any message shown by ArchiveMark.</p></div>
+        <div><p className="eyebrow">Still need help?</p><h2 id="support-title">Tell us what happened.</h2><p>Open a support request and include the steps you took and any message shown by ArchiveVault.</p></div>
         <a className="button primary" href={supportRequest}><CircleHelp size={19} /> Contact support</a>
       </section>
 
       <footer>
-        <div className="brand"><img src="./brand-icon.png" alt="" /><span>ArchiveMark</span></div>
+        <div className="brand"><img src="./brand-icon.png" alt="" /><span>ArchiveVault</span></div>
         <p>Your Personal Media Archive</p>
         <a href={repository}>GitHub <ExternalLink size={14} /></a>
       </footer>
