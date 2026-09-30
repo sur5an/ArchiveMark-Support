@@ -20,7 +20,7 @@ const experiences = [
   { icon: FolderOpen, title: 'Choose what to protect', text: 'Connect your photo library and add any Files folders you want included.' },
   { icon: RefreshCw, title: 'Back up only what is needed', text: 'ArchiveVault compares your library with your archive before enabling backup.' },
   { icon: FileCheck2, title: 'Know every copy is safe', text: 'Each copied file is verified. Integrity Check can find and repair damaged copies.' },
-  { icon: BellRing, title: 'Stay up to date', text: 'Review recent backups and receive reminders when new media is waiting.' },
+  { icon: BellRing, title: 'Stay up to date', text: 'Pause and resume safely, follow progress from the widget, and receive reminders when media is waiting.' },
 ];
 
 const troubleshooting = [
@@ -28,8 +28,9 @@ const troubleshooting = [
   { question: 'What if manifest.csv is deleted?', answer: 'ArchiveVault can rebuild verified records from its local catalogue when the destination files still match. Your media files remain the source of truth.' },
   { question: 'Why can a Live Photo count as two files?', answer: 'On iPhone, a Live Photo contains an image and a short video. ArchiveVault counts one library item but verifies both original files.' },
   { question: 'What does Integrity Check do?', answer: 'It reads backed-up files, confirms their contents, and recreates missing or damaged copies when the original is available.' },
-  { question: 'Can I use network storage?', answer: 'Yes. ArchiveVault can connect directly to a compatible SMB2 or SMB3 share. The app tests write access before enabling backup, and stores the SMB password in the Apple Keychain.' },
+  { question: 'Can I use network storage?', answer: 'Yes. ArchiveVault can discover and connect directly to a compatible SMB2 or SMB3 share. The app tests write access before enabling backup and stores the SMB password in the Apple Keychain.' },
   { question: 'Can a backup continue while the device is locked?', answer: 'ArchiveVault uses system-managed background processing when available and saves progress after every verified file. Keep the device powered for large backups; reopening safely reconciles completed files.' },
+  { question: 'What does the widget show?', answer: 'The iOS widget shows running or paused backup progress. When no backup is active, it shows the latest successful backup and the last known number of records still waiting.' },
 ];
 
 export default function Home() {
@@ -109,16 +110,19 @@ export default function Home() {
           <article><h3>Photo library</h3><p>Access is used to show backup status and read originals selected for backup.</p></article>
           <article><h3>Files and destinations</h3><p>ArchiveVault accesses only folders you select. Copies and metadata are written directly to storage you choose.</p></article>
           <article><h3>SMB network shares</h3><p>Server settings remain on the device and passwords are stored in the Apple Keychain. Your chosen server or provider may have its own privacy practices.</p></article>
+          <article><h3>Local network discovery</h3><p>Bonjour discovery can list devices advertising SMB on your local network. Results are processed on the device and are not sent to the developer.</p></article>
           <article><h3>Backup records</h3><p>Filenames, dates, file sizes, SHA-256 hashes, paths, timestamps, and a random installation identifier are kept on the device and inside the selected archive.</p></article>
           <article><h3>No collection or tracking</h3><p>The developer does not collect, sell, rent, or share user data. There are no advertising, analytics, or cross-app tracking services.</p></article>
           <article><h3>Notifications</h3><p>Optional reminders are scheduled on the device and can be disabled in ArchiveVault or iOS Settings.</p></article>
-          <article><h3>Retention and deletion</h3><p>App records remain until the app or applicable source is removed. Destination files remain until you delete them from the chosen storage. ArchiveVault never deletes source originals.</p></article>
+          <article><h3>Background processing and widget</h3><p>iOS may give ArchiveVault background time to count new media, evaluate reminders, and refresh its widget. Backup phase, progress, latest backup time, and pending counts are shared with the widget through an on-device Apple App Group.</p></article>
+          <article><h3>App update check</h3><p>ArchiveVault may send its public App Store identifier and storefront country to Apple’s public lookup service to check for a newer release. No media, archive records, credentials, or installation identifier are included.</p></article>
+          <article><h3>Retention and deletion</h3><p>App records, widget state, and a cached required-update result remain until the app or applicable source is removed. Destination files remain until you delete them from the chosen storage. ArchiveVault never deletes source originals.</p></article>
           <article><h3>Your choices</h3><p>Revoke Photos, local-network, or notification access in iOS Settings; remove selected Files sources in the app; and replace an SMB destination at any time.</p></article>
           <article><h3>Security</h3><p>Copied files are verified with SHA-256. SMB encryption can be requested for compatible servers. No storage or transmission method can be guaranteed completely secure.</p></article>
           <article><h3>Third-party software</h3><p>SMB support uses <a href="https://github.com/amosavian/AMSMB2">AMSMB2</a> under the MIT License and <a href="https://github.com/sahlberg/libsmb2">libsmb2</a> under the LGPL-2.1-or-later license.</p></article>
           <article><h3>Children and changes</h3><p>ArchiveVault is a general-purpose utility and does not knowingly collect information from children or other users. Material policy changes will be reflected here.</p></article>
         </div>
-        <p className="updated">Effective and last updated September 28, 2026. Privacy questions can be submitted through the support-request link on this page.</p>
+        <p className="updated">Effective and last updated September 30, 2026. Privacy questions can be submitted through the support-request link on this page.</p>
       </section>
 
       <section className="support-banner" aria-labelledby="support-title">

@@ -48,7 +48,7 @@
       <article class="feature-card"><span class="icon-badge"><span class="icon-mark">+</span></span><h3>Choose what to protect</h3><p>Connect your photo library and add any Files folders you want included.</p></article>
       <article class="feature-card"><span class="icon-badge"><span class="icon-mark">↻</span></span><h3>Back up only what is needed</h3><p>ArchiveVault compares your library with your archive before enabling backup.</p></article>
       <article class="feature-card"><span class="icon-badge"><span class="icon-mark">✓</span></span><h3>Know every copy is safe</h3><p>Each copied file is verified. Integrity Check can find and repair damaged copies.</p></article>
-      <article class="feature-card"><span class="icon-badge"><span class="icon-mark">◷</span></span><h3>Stay up to date</h3><p>Review recent backups and receive reminders when new media is waiting.</p></article>
+      <article class="feature-card"><span class="icon-badge"><span class="icon-mark">◷</span></span><h3>Stay up to date</h3><p>Pause and resume safely, follow progress from the widget, and receive reminders when media is waiting.</p></article>
     </div>
   </section>
 
@@ -69,7 +69,9 @@
       <details><summary>What if manifest.csv is deleted?<span aria-hidden="true">+</span></summary><p>ArchiveVault can rebuild verified records from its local catalogue when the destination files still match. Your media files remain the source of truth.</p></details>
       <details><summary>Why can a Live Photo count as two files?<span aria-hidden="true">+</span></summary><p>On iPhone, a Live Photo contains an image and a short video. ArchiveVault counts one library item but verifies both original files.</p></details>
       <details><summary>What does Integrity Check do?<span aria-hidden="true">+</span></summary><p>It reads backed-up files, confirms their contents, and recreates missing or damaged copies when the original is available.</p></details>
+      <details><summary>Can I use network storage?<span aria-hidden="true">+</span></summary><p>Yes. ArchiveVault can discover and connect directly to a compatible SMB2 or SMB3 share, tests write access before backup, and stores the password in Apple Keychain.</p></details>
       <details><summary>Can a backup continue while the device is locked?<span aria-hidden="true">+</span></summary><p>ArchiveVault uses the background time available on your device. For very large backups, keep the app open and the device powered; reopening safely reconciles completed files.</p></details>
+      <details><summary>What does the widget show?<span aria-hidden="true">+</span></summary><p>The iOS widget shows running or paused backup progress. When idle, it shows the latest successful backup and last known pending count.</p></details>
     </div>
   </section>
 
@@ -79,15 +81,18 @@
       <article><h3>Photo library</h3><p>Access is used to show backup status and read originals selected for backup.</p></article>
       <article><h3>Files and destinations</h3><p>ArchiveVault accesses only the source folders and local, external, or SMB destination you choose.</p></article>
       <article><h3>SMB credentials</h3><p>If you configure an SMB share, its credentials are stored in the Apple Keychain on your device and used only to connect to that share.</p></article>
+      <article><h3>Local network discovery</h3><p>Bonjour discovery can list SMB servers on your local network. Results remain on the device and are not sent to the developer.</p></article>
       <article><h3>Backup records</h3><p>Technical records such as file names, sizes, dates, checksums, device identifiers, and backup results are kept on your device and in the selected archive destination.</p></article>
       <article><h3>Notifications</h3><p>Optional reminders are scheduled on your device when new media may be waiting for backup.</p></article>
-      <article><h3>Retention and deletion</h3><p>ArchiveVault keeps local settings and records until you remove them or delete the app. Backup files and records remain at your destination until you delete them.</p></article>
+      <article><h3>Background processing and widget</h3><p>iOS may give ArchiveVault background time to count new media, evaluate reminders, and refresh its widget. Progress, backup time, and pending counts are shared with the widget through an on-device Apple App Group.</p></article>
+      <article><h3>App update check</h3><p>ArchiveVault may send its public app identifier and storefront country to Apple’s public App Store lookup service. No media, archive records, credentials, or installation identifier are included.</p></article>
+      <article><h3>Retention and deletion</h3><p>ArchiveVault keeps local settings, records, widget state, and a cached required-update result until you remove them or delete the app. Backup files and records remain at your destination until you delete them.</p></article>
       <article><h3>Your choices</h3><p>You can limit Photos access, remove selected Files folders, change the destination, disable reminders, and remove saved SMB credentials by deleting that destination.</p></article>
       <article><h3>Security</h3><p>ArchiveVault verifies copied files with SHA-256. Network security also depends on your SMB server and the connection options it supports.</p></article>
       <article><h3>Third-party software</h3><p>SMB support uses <a href="https://github.com/amosavian/AMSMB2">AMSMB2</a> under the MIT License and <a href="https://github.com/sahlberg/libsmb2">libsmb2</a> under the LGPL-2.1-or-later license.</p></article>
       <article><h3>Children and changes</h3><p>ArchiveVault is not directed to children and knowingly collects no personal data. Material privacy changes will be posted on this page.</p></article>
     </div>
-    <p class="updated">Privacy information effective September 28, 2026.</p>
+    <p class="updated">Privacy information effective September 30, 2026.</p>
   </section>
 
   <section class="support-banner" aria-labelledby="support-title">
