@@ -122,7 +122,7 @@ export default function Home() {
           <article><h3>Third-party software</h3><p>SMB support uses <a href="https://github.com/amosavian/AMSMB2">AMSMB2</a> under the MIT License and <a href="https://github.com/sahlberg/libsmb2">libsmb2</a> under the LGPL-2.1-or-later license.</p></article>
           <article><h3>Children and changes</h3><p>ArchiveVault is a general-purpose utility and does not knowingly collect information from children or other users. Material policy changes will be reflected here.</p></article>
         </div>
-        <p className="updated">Effective and last updated September 30, 2026. Privacy questions can be submitted through the support-request link on this page.</p>
+        <p className="updated">Effective and last updated October 1, 2026. Privacy questions can be submitted through the support-request link on this page.</p>
       </section>
 
       <section className="support-banner" aria-labelledby="support-title">
